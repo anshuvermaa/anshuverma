@@ -111,8 +111,7 @@ function Footer() {
     formData.append("name", nameRef.current.value);
     formData.append("email", emailRef.current.value);
     formData.append("message", messageRef.current.value);
-    const url: RequestInfo = process.env.NEXT_PUBLIC_FORMSPREE_URL!;
-    fetch(url, {
+    fetch("mailto:anshuverma.av2187@gmail.com", {
       method: "POST",
       body: formData,
       headers: {
