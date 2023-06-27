@@ -215,13 +215,6 @@ function Footer() {
                   sm={6}
                   className={classes.illustrationContainer}
                 >
-                  <Hidden xsDown>
-                    <img
-                      src="/assets/message.svg"
-                      className={classes.illustration}
-                      alt="message illustration"
-                    />
-                  </Hidden>
                 </Grid>
               </Grid>
             </article>
