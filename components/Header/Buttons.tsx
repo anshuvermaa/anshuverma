@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { scroller } from "react-scroll";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
