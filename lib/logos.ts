@@ -36,6 +36,7 @@ type Logos = {
     logo: string;
     spin?: boolean;
     invert?: boolean;
+    
   };
 };
 
