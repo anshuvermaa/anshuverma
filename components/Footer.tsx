@@ -1,5 +1,4 @@
 import {
-  FormEvent,
   memo,
   useRef,
   useState,
@@ -83,7 +82,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Footer() {
   const [open, setOpen] = useState(false);
-  const [message, setMessage] = useState("Message Sent");
   const classes = useStyles();
   const theme = useTheme();
   const nameRef = useRef<HTMLInputElement>(null!);
@@ -104,37 +102,6 @@ function Footer() {
     setOpen(false);
   };
 
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", nameRef.current.value);
-    formData.append("email", emailRef.current.value);
-    formData.append("message", messageRef.current.value);
-    fetch("mailto:anshuverma.av2187@gmail.com", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Status Code Error ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((_data) => {
-        setOpen(true);
-        nameRef.current.value = "";
-        emailRef.current.value = "";
-        messageRef.current.value = "";
-      })
-      .catch((error) => {
-        console.log(error);
-        setMessage("Error sending message");
-        setOpen(true);
-      });
-  };
 
   return (
     <footer className={classes.root}>
@@ -222,7 +189,7 @@ function Footer() {
             <Typography variant="h3" align="left">
               Say Hi
             </Typography>
-            <form onSubmit={handleFormSubmit}>
+            <form action="https://formsubmit.co/anshuverma.av2187@gmail.com" method="POST">
               <TextField
                 label="Name"
                 fullWidth
@@ -275,7 +242,6 @@ function Footer() {
               open={open}
               autoHideDuration={6000}
               onClose={handleClose}
-              message={message}
               action={
                 <>
                   <IconButton
