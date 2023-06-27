@@ -149,7 +149,7 @@ const logos: Logos = {
   },
   Kubernetes: {
     label: "Kubernetes",
-    logo: "/assets/icons/Kubernetes.svg",
+    logo: "/assets/icons/Kubernete.svg",
   },
   nest: {
     label: "nest js",
